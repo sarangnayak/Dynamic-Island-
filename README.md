@@ -46,8 +46,11 @@ It features smooth transitions, animated live activities (Music & Call), ripple 
 ---
 
 ## 📂 Folder Structure  
+```
 📁 Dynamic-Island-Navigation
 │
-├── index.html        # Main file.
-├── style.css         # Embedded styling (can be separated).
-└── assets/           # Optional icons or media.
+├── index.html        # Main file
+├── style.css         # Embedded styling (can be separated)
+└── assets/           # Optional icons or media
+
+```
