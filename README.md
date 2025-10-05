@@ -6,7 +6,7 @@ It features smooth transitions, animated live activities (Music & Call), ripple 
 ---
 
 ## 🖼️ Live Demo  
-🔗 [View Project](https://sarangnayak.github.io/Dynamic-Island-Navigation)
+🔗 [View Project](https://sarangnayak.github.io/Dynamic-Island-/)
 
 ---
 
