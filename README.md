@@ -52,5 +52,4 @@ It features smooth transitions, animated live activities (Music & Call), ripple 
 ├── index.html        # Main file
 ├── style.css         # Embedded styling (can be separated)
 └── assets/           # Optional icons or media
-
 ```
