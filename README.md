@@ -53,3 +53,11 @@ It features smooth transitions, animated live activities (Music & Call), ripple 
 ├── style.css         # Embedded styling (can be separated)
 └── assets/           # Optional icons or media
 ```
+---
+
+## 🚀 Getting Started  
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/sarangnayak/Dynamic-Island-Navigation.git
+```
