@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Island Navigation</title>
 
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Google Fonts: Inter (SF Pro alternative) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Particles -->
+    <div class="particles" id="particles-container"></div>
+
+    <div class="main-content">
+        <h1>Dynamic Island</h1>
+        <p>Perfectly centered with smooth animations</p>
+    </div>
+
+    <!-- Demo Controls -->
+    <div class="demo-controls">
+        <button class="demo-btn" onclick="showMusic()">Show Music</button>
+        <button class="demo-btn" onclick="showCall()">Show Call</button>
+        <button class="demo-btn" onclick="hideActivity()">Hide Activity</button>
+        <button class="demo-btn" onclick="resetIsland()">Reset Island</button>
+    </div>
+
+    <!-- Enhanced Dynamic Island -->
+    <div id="dynamic-island">
+        <div class="island-inner">
+            <!-- Collapsed state content -->
+            <div id="island-collapsed" class="island-collapsed-content">
+                <div id="time-display" class="time-display"></div>
+                <div class="status-dot"></div>
+            </div>
+
+            <!-- Expanded state content (Navbar) -->
+            <div id="navbar-content" class="navbar-content">
+                <a href="#"><i class="fas fa-home"></i>Home</a>
+                <a href="#"><i class="fas fa-user"></i>About</a>
+                <a href="#"><i class="fas fa-briefcase"></i>Work</a>
+                <a href="#"><i class="fas fa-envelope"></i>Contact</a>
+            </div>
+
+            <!-- Live Activities -->
+            <div class="live-activity music-activity">
+                <div class="activity-content">
+                    <i class="fas fa-music activity-icon"></i>
+                    <div class="activity-text">Now Playing: Favorite Song</div>
+                    <div class="activity-controls">
+                        <button><i class="fas fa-backward"></i></button>
+                        <button><i class="fas fa-play"></i></button>
+                        <button><i class="fas fa-forward"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="live-activity call-activity">
+                <div class="activity-content">
+                    <i class="fas fa-phone activity-icon"></i>
+                    <div class="activity-text">Call - <span id="call-timer">00:00</span></div>
+                    <div class="activity-controls">
+                        <button><i class="fas fa-phone-slash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+</html>
