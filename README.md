@@ -9,6 +9,7 @@ It features smooth transitions, animated live activities (Music & Call), ripple 
 🔗 [View Project](https://sarangnayak.github.io/Dynamic-Island-/)
 
 ---
+> ![Morse Code Generator Screenshot](./images/preview.png)
 
 ## 🛠️ Tech Stack & Tools  
 
