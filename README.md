@@ -1,6 +1,6 @@
 # 🌊 Dynamic Island Navigation
 
-A sleek and interactive **Dynamic Island-style navigation system**, inspired by Apple’s iOS design — built with **HTML**, **CSS**, and **GSAP**.  
+A sleek and interactive **Dynamic Island-style navigation system**, inspired by Apple’s iOS design, built with **HTML**, **CSS**, and **GSAP**.  
 It features smooth transitions, animated live activities (Music & Call), ripple effects, and an expanding navbar with real-time clock display.
 
 ---
@@ -47,12 +47,12 @@ It features smooth transitions, animated live activities (Music & Call), ripple 
 
 ## 📂 Folder Structure  
 ```
-📁 Dynamic-Island-Navigation
+📁 Dynamic-Island-Navigation/
 │
 ├── index.html        # Main file
 ├── style.css         # Embedded styling (can be separated)
+├── script.js         # Handles interactivity or animations
 └── assets/           # Optional icons or media
-```
 ---
 
 ## 🚀 Getting Started  
