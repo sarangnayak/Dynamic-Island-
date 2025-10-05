@@ -8,77 +8,93 @@
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
-    <!-- Google Fonts: Inter (SF Pro alternative) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loading">
     <!-- Background Particles -->
     <div class="particles" id="particles-container"></div>
 
-    <div class="main-content">
+    <main class="main-content">
         <h1>Dynamic Island</h1>
-        <p>Perfectly centered with smooth animations</p>
-    </div>
+        <p>Experience the real iPhone Dynamic Island in your browser</p>
+    </main>
 
     <!-- Demo Controls -->
-    <div class="demo-controls">
-        <button class="demo-btn" onclick="showMusic()">Show Music</button>
-        <button class="demo-btn" onclick="showCall()">Show Call</button>
-        <button class="demo-btn" onclick="hideActivity()">Hide Activity</button>
-        <button class="demo-btn" onclick="resetIsland()">Reset Island</button>
-    </div>
+    <nav class="demo-controls" aria-label="Demo controls">
+        <button class="demo-btn" id="show-music-btn" aria-label="Show music player">
+            <i class="fas fa-music"></i> Show Music
+        </button>
+        <button class="demo-btn" id="show-call-btn" aria-label="Show call activity">
+            <i class="fas fa-phone"></i> Show Call
+        </button>
+        <button class="demo-btn" id="hide-activity-btn" aria-label="Hide current activity">
+            <i class="fas fa-times"></i> Hide Activity
+        </button>
+        <button class="demo-btn" id="reset-island-btn" aria-label="Reset dynamic island">
+            <i class="fas fa-redo"></i> Reset Island
+        </button>
+    </nav>
 
     <!-- Enhanced Dynamic Island -->
-    <div id="dynamic-island">
+    <div id="dynamic-island" role="button" aria-label="Dynamic Island navigation" tabindex="0" aria-expanded="false">
         <div class="island-inner">
             <!-- Collapsed state content -->
-            <div id="island-collapsed" class="island-collapsed-content">
-                <div id="time-display" class="time-display"></div>
-                <div class="status-dot"></div>
+            <div id="island-collapsed" class="island-collapsed-content" aria-live="polite">
+                <div id="time-display" class="time-display">--:--</div>
+                <div class="status-dot" aria-hidden="true"></div>
             </div>
 
             <!-- Expanded state content (Navbar) -->
-            <div id="navbar-content" class="navbar-content">
-                <a href="#"><i class="fas fa-home"></i>Home</a>
-                <a href="#"><i class="fas fa-user"></i>About</a>
-                <a href="#"><i class="fas fa-briefcase"></i>Work</a>
-                <a href="#"><i class="fas fa-envelope"></i>Contact</a>
-            </div>
+            <nav id="navbar-content" class="navbar-content" aria-label="Main navigation" hidden>
+                <a href="#" aria-label="Home page"><i class="fas fa-home"></i>Home</a>
+                <a href="#" aria-label="About page"><i class="fas fa-user"></i>About</a>
+                <a href="#" aria-label="Work portfolio"><i class="fas fa-briefcase"></i>Work</a>
+                <a href="#" aria-label="Contact information"><i class="fas fa-envelope"></i>Contact</a>
+            </nav>
 
             <!-- Live Activities -->
-            <div class="live-activity music-activity">
+            <div class="live-activity music-activity" aria-live="polite" hidden>
                 <div class="activity-content">
-                    <i class="fas fa-music activity-icon"></i>
+                    <i class="fas fa-music activity-icon" aria-hidden="true"></i>
                     <div class="activity-text">Now Playing: Favorite Song</div>
                     <div class="activity-controls">
-                        <button><i class="fas fa-backward"></i></button>
-                        <button><i class="fas fa-play"></i></button>
-                        <button><i class="fas fa-forward"></i></button>
+                        <button aria-label="Previous track"><i class="fas fa-backward"></i></button>
+                        <button aria-label="Play/pause"><i class="fas fa-play"></i></button>
+                        <button aria-label="Next track"><i class="fas fa-forward"></i></button>
                     </div>
                 </div>
             </div>
 
-            <div class="live-activity call-activity">
+            <div class="live-activity call-activity" aria-live="polite" hidden>
                 <div class="activity-content">
-                    <i class="fas fa-phone activity-icon"></i>
+                    <i class="fas fa-phone activity-icon" aria-hidden="true"></i>
                     <div class="activity-text">Call - <span id="call-timer">00:00</span></div>
                     <div class="activity-controls">
-                        <button><i class="fas fa-phone-slash"></i></button>
+                        <button aria-label="End call"><i class="fas fa-phone-slash"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- External JS -->
+    <!-- Error Fallback -->
+    <div id="error-fallback" style="display: none;">
+        <p>Dynamic Island failed to load. Please refresh the page.</p>
+        <button onclick="window.location.reload()">Reload Page</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
